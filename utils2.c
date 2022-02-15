@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:05 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/15 03:20:09 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/15 19:27:56 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	check_max_and_min(long x)
 		ft_error();
 }
 
-void	ft_free(int *tab1, int tab2)
+void	ft_free(int *tab1, int *tab2)
 {
 	free(tab1);
 	free(tab2);
