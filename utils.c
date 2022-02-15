@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:58:09 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/14 02:36:14 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/15 03:11:22 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,6 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	if (!str)
-		return ;
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
 }
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
@@ -58,8 +44,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 
 int		ft_atoi(const char *str)
 {
-	int	j;
-	int	res;
+	int		j;
+	long	res;
 
 	j = 1;
 	res = 0;
@@ -77,6 +63,9 @@ int		ft_atoi(const char *str)
 		res = res * 10 + (*str - '0');
 		str++;
 	}
+	check_max_and_min(res);
+	if (*str != '\0')
+		ft_error();
 	return (res * j);
 }
 

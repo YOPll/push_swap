@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:05 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/14 02:30:39 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/15 03:10:45 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,21 @@ void    is_dup(int ac, int *arr)
 		while (j < ac)
 		{
 			if (arr[i] == arr[j])
-			{
-				write(1, "Error\n", 6);
-				exit(1);
-			}
+				ft_error();
 			j++;
 		}
 		i++;
 	}
+}
+
+void	ft_error(void)
+{
+	write(1, "Error\n", 6);
+	exit(1);
+}
+
+void	check_max_and_min(long x)
+{
+	if (x < INT_MIN || x > INT_MAX)
+		ft_error();
 }
