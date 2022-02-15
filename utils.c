@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:58:09 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/15 03:11:22 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/15 03:15:29 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t				i;
 	const unsigned char	*cs1;
@@ -42,7 +42,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	return (0);
 }
 
-int		ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
 	int		j;
 	long	res;
@@ -69,7 +69,7 @@ int		ft_atoi(const char *str)
 	return (res * j);
 }
 
-int		ft_str_isnum(char *str)
+int	ft_str_isnum(char *str)
 {
 	int	i;
 

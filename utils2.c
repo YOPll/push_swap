@@ -6,15 +6,15 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:05 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/15 03:10:45 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/15 03:14:55 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    conv(char *av[], int *tab)
+void	conv(char *av[], int *tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (av[i])
@@ -23,10 +23,11 @@ void    conv(char *av[], int *tab)
 		i++;
 	}
 }
-void    is_dup(int ac, int *arr)
+
+void	is_dup(int ac, int *arr)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (i < ac - 1)
