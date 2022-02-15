@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/15 03:16:08 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/15 03:24:15 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
+
+typedef struct s_stack
+{
+	int	filled;
+	int	*stack;
+}	t_stack;
 
 size_t	ft_strlen(const char *s);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
