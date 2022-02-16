@@ -6,11 +6,11 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:05 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/15 19:27:56 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/15 19:39:56 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "./include/push_swap.h"
 
 void	conv(char *av[], int *tab)
 {
