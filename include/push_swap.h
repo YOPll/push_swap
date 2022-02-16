@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/16 02:33:59 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/16 21:07:01 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ void    swap(t_stack *stack);
 void    swap_ss(t_stack *stack_a, t_stack *stack_b);
 void	rotate(t_stack *stack);
 void	rotate_rr(t_stack *stack_a, t_stack *stack_b);
+void	push_to(t_stack *pushed_to, t_stack *from);
+void    rev_rotate(t_stack *stack);
+void    rrr(t_stack *stack_a, t_stack stack_b);
+
 
 #endif
