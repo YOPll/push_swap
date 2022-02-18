@@ -6,12 +6,11 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:58:09 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/18 18:14:20 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/18 18:31:39 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
-#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {

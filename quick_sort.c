@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 18:42:26 by zyacoubi          #+#    #+#             */
-/*   Updated: 2022/02/18 18:52:35 by yopi             ###   ########.fr       */
+/*   Created: 2022/02/18 18:37:01 by yopi              #+#    #+#             */
+/*   Updated: 2022/02/18 18:55:23 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
 
-void	push_swap(int ac, char *av[])
+void	two_solve(t_stack *stack_a)
 {
-	t_stack stack_a;
-	t_stack stack_b;
-	int	*arr;
-
-	arr = malloc(sizeof(int) * ac);
-	conv(av, arr);
-	is_dup(ac, arr);
-	stack_handle(&stack_a, &stack_b, ac, arr);
-	if(stack_a.filled < 4 || stack_b.filled == 5)
-		quick_sort(&stack_a, &stack_b);
-	
-
+	if (stack_a->arr[0] > stack_a->arr[1])
+	{
+		swap(stack_a);
+		write(1, "sa\n", 3);
+	}
 }
 
-int	main(int ac, char *av[])
+void	quick_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	if (ac == 1)
-		write(1, "Error\n", 6);
-	push_swap(ac - 1, av + 1);
-	return (0);
+	if (stack_a->filled == 1)
+		exit(0);
+	if (stack_a->filled == 2)
+		two_solve(stack_a);
+	/*if (stack_a->filled == 3)
+		tree_solve();
+	if (stack_a->filled == 5)
+		last_solve();*/	
 }
