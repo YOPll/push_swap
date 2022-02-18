@@ -4,7 +4,9 @@ HEADER_DIR = include
 HEADER = include/push_swap.h
 SRC = push_swap.c\
 	utils.c\
-	utils2.c
+	utils2.c\
+	swap_func.c\
+	swap_func2.c
 #SRCB = minitalk_utils_bonus.c
 
 OBJS = $(SRC:.c=.o)

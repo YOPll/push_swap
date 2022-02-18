@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/16 21:07:01 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/18 18:15:07 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,9 @@ typedef struct s_stack
 }	t_stack;
 
 size_t	ft_strlen(const char *s);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	conv(char *av[], int *tab);
 int		ft_atoi(const char *str);
-int		ft_str_isnum(char *str);
 void	is_dup(int ac, int *arr);
 void	ft_error(void);
 void	check_max_and_min(long x);
@@ -41,6 +40,7 @@ void	rotate_rr(t_stack *stack_a, t_stack *stack_b);
 void	push_to(t_stack *pushed_to, t_stack *from);
 void    rev_rotate(t_stack *stack);
 void    rrr(t_stack *stack_a, t_stack stack_b);
+void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab);
 
 
 #endif

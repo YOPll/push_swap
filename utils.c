@@ -6,11 +6,12 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/11 18:58:09 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/15 19:39:51 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/18 18:14:20 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
+#include <stdio.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -24,22 +25,19 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t				i;
-	const unsigned char	*cs1;
-	const unsigned char	*cs2;
+	size_t	i;
 
-	cs1 = (const unsigned char *)s1;
-	cs2 = (const unsigned char *)s2;
 	i = 0;
+	if (src == dst || n == 0)
+		return (dst);
 	while (i < n)
 	{
-		if (cs1[i] != cs2[i])
-			return (cs1[i] - cs2[i]);
+		((char *)dst)[i] = ((char *)src)[i];
 		i++;
 	}
-	return (0);
+	return (dst);
 }
 
 int	ft_atoi(const char *str)
@@ -69,16 +67,11 @@ int	ft_atoi(const char *str)
 	return (res * j);
 }
 
-int	ft_str_isnum(char *str)
+void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		++i;
-		if (str[i] == '\0')
-			return (1);
-	}
-	return (0);
+	stack_a->arr = malloc(sizeof(int) * size);
+	stack_a->filled = size;
+	ft_memcpy(stack_a->arr, tab, (size) * 4);
+	stack_b->arr = malloc(sizeof(int) * size);
+	stack_b->filled = 0;
 }
