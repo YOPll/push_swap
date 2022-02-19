@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
+#include <stdio.h>
 
 void	push_swap(int ac, char *av[])
 {
@@ -24,7 +25,6 @@ void	push_swap(int ac, char *av[])
 	stack_handle(&stack_a, &stack_b, ac, arr);
 	if(stack_a.filled < 4 || stack_b.filled == 5)
 		quick_sort(&stack_a, &stack_b);
-	
 
 }
 

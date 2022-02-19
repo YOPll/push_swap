@@ -21,7 +21,7 @@ void    rev_rotate(t_stack *stack)
         return ;
     i = stack->filled - 1;
     temp = stack->arr[i];
-    while (i < 0)
+    while (i > 0)
     {
         stack->arr[i] = stack->arr[i - 1];
         i--;
