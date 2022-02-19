@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/18 19:11:41 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/18 19:14:38 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void    rev_rotate(t_stack *stack);
 void    rrr(t_stack *stack_a, t_stack stack_b);
 void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab);
 void	quick_sort(t_stack *stack_a, t_stack *stack_b);
-void	two_solve(t_stack *stack_a);
+void	two_solve(t_stack *stack);
 
 
 #endif
