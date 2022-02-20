@@ -43,6 +43,11 @@ void    rrr(t_stack *stack_a, t_stack stack_b);
 void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab);
 void	quick_sort(t_stack *stack_a, t_stack *stack_b);
 void	two_solve(t_stack *stack);
+void	tree_solve(t_stack *stack);
+void	last_solve(t_stack *stack_a, t_stack *stack_b);
+void	solver(t_stack *stack_a, t_stack *stack_b);
+int		*sort_five(int *arr, int filled);
+void	solver_stackb(t_stack *stack_a, t_stack *stack_b);
 
 
 #endif

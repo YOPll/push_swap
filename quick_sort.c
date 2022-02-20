@@ -47,9 +47,20 @@ void	tree_solve(t_stack *stack)
 	{
 		rev_rotate(stack);
 		write(1, "rrxa\n", 5);
-	}
+	}	
+}
 
-	
+void	last_solve(t_stack *stack_a, t_stack *stack_b)
+{
+	int	checker;
+	int	j;
+
+	checker = 0;
+	j = stack_a->filled;
+	while (checker < j && stack_a->arr[checker] < stack_a->arr[checker + 1])
+		checker++;
+	if(checker != stack_a->filled)
+		solver(stack_a, stack_b);
 }
 
 void	quick_sort(t_stack *stack_a, t_stack *stack_b)
@@ -60,7 +71,7 @@ void	quick_sort(t_stack *stack_a, t_stack *stack_b)
 		two_solve(stack_a);
 	if (stack_a->filled == 3)
 		tree_solve(stack_a);
-	/*if (stack_a->filled == 5)
-		last_solve();*/	
+	if (stack_a->filled == 5)
+		last_solve(stack_a, stack_b);
 	exit(0);
 }

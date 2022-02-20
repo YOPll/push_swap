@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
-#include <stdio.h>
 
 void	push_swap(int ac, char *av[])
 {
