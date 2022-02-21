@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:42:26 by zyacoubi          #+#    #+#             */
-/*   Updated: 2022/02/18 18:52:35 by yopi             ###   ########.fr       */
+/*   Updated: 2022/02/21 17:57:06 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,13 @@ void	push_swap(int ac, char *av[])
 	t_stack stack_a;
 	t_stack stack_b;
 	int	*arr;
+	int	*marked_head;
 
 	arr = malloc(sizeof(int) * ac);
 	conv(av, arr);
 	is_dup(ac, arr);
 	stack_handle(&stack_a, &stack_b, ac, arr);
-	if(stack_a.filled < 4 || stack_b.filled == 5)
+	if(stack_a.filled < 4 || stack_a.filled == 5)
 		quick_sort(&stack_a, &stack_b);
 
 }
