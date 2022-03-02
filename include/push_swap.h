@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/02/21 18:30:19 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/02 11:44:30 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,9 @@ void	last_solve(t_stack *stack_a, t_stack *stack_b);
 void	solver(t_stack *stack_a, t_stack *stack_b);
 int		*sort_five(int *arr, int filled);
 void	solver_stackb(t_stack *stack_a, t_stack *stack_b);
-
+int		*greater_than(int *arr, int filled);
+int		*true_false(int *arr, int filled, int index);
+int		find_mark_head(int *arr, int filled, int i);
+int		find_max_num_index(int *arr, int filled);
 
 #endif

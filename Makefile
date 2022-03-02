@@ -8,7 +8,8 @@ SRC = push_swap.c\
 	swap_func.c\
 	swap_func2.c\
 	quick_sort.c\
-	low_solver.c
+	low_solver.c\
+	greater_than.c
 #SRCB = minitalk_utils_bonus.c
 
 OBJS = $(SRC:.c=.o)
