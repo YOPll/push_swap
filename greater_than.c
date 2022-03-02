@@ -3,14 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   greater_than.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:36:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/02 11:30:24 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/02 19:52:23 by zyacoubi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
+
+int	find_min_num_index(int *arr, int filled)
+{
+	int	min;
+	int index;
+	int i;
+	
+	i = 1;
+	index = 0;
+	min = arr[0];
+	while (i < filled)
+	{
+		if (arr[i] < min)
+		{
+			min = arr[i];
+			index = i;
+		}
+		i++;
+	}
+	return (index);
+}
 
 int	*true_false(int *arr, int filled, int index)
 {

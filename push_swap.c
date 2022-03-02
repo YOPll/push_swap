@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:42:26 by zyacoubi          #+#    #+#             */
-/*   Updated: 2022/03/02 12:13:57 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/02 19:26:20 by zyacoubi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
-#include <stdio.h>
 
 void	push_swap(int ac, char *av[])
 {
@@ -27,7 +26,7 @@ void	push_swap(int ac, char *av[])
 	if(stack_a.filled < 4 || stack_a.filled == 5)
 		quick_sort(&stack_a, &stack_b);
 	marked_head = greater_than(stack_a.arr, stack_a.filled);
-	printf("%d" ,marked_head[1]);
+	start_sorting(&stack_a, &stack_b, marked_head);
 	ft_free(marked_head, arr);
 	ft_free(stack_a.arr, stack_b.arr);
 }
