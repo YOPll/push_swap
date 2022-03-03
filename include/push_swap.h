@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/02 20:20:32 by zyacoubi         ###   ########.fr       */
+/*   Updated: 2022/03/03 02:19:04 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,8 @@ void    start_sorting(t_stack *stack_a, t_stack *stack_b, int *head);
 int		find_min_num_index(int *arr, int filled);
 void    first_rotate(t_stack *stack_a, int *head, int counter);
 void    sorting_stack_a(t_stack *stack_a);
+
+
+int	perfect_sort(t_stack *stack_a, t_stack *stack_b);
 
 #endif
