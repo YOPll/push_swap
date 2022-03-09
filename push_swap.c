@@ -6,7 +6,7 @@
 /*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:42:26 by zyacoubi          #+#    #+#             */
-/*   Updated: 2022/03/02 19:26:20 by zyacoubi         ###   ########.fr       */
+/*   Updated: 2022/03/04 14:47:43 by zyacoubi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	push_swap(int ac, char *av[])
 		quick_sort(&stack_a, &stack_b);
 	marked_head = greater_than(stack_a.arr, stack_a.filled);
 	start_sorting(&stack_a, &stack_b, marked_head);
+	mid_sorting(&stack_a, &stack_b);
+	last_sorting(&stack_a);
 	ft_free(marked_head, arr);
 	ft_free(stack_a.arr, stack_b.arr);
 }

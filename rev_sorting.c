@@ -3,23 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   rev_sorting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 02:01:39 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/03 02:04:04 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/04 14:50:38 by zyacoubi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
 
-void	rev_sorting(t_stack *stack_a, t_stack *stack_b)
+void	last_sorting(t_stack *stack_a)
 {
-	int index;
+	int min_index;
 	
-	while (stack_b->filled != 0)
+	min_index = find_min_num_index(stack_a->arr, stack_a->filled);
+	if (min_index <= stack_a->filled / 2)
 	{
-		index = perfect_sort(stack_a, stack_b);
-		
+		while (min_index > 0)
+		{
+			rotate(stack_a);
+			write(1, "ra\n", 3);
+			min_index--;
+		}
 	}
-	
+	else
+	{
+		while (min_index < stack_a->filled)
+		{
+			rev_rotate(stack_a);
+			write(1, "rra\n", 4);
+			min_index++;
+		}
+	}
 }

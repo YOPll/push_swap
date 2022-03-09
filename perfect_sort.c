@@ -12,6 +12,17 @@
 
 #include "./include/push_swap.h"
 
+void	mid_sorting(t_stack *stack_a, t_stack *stack_b)
+{
+	int index;
+	while (stack_b->filled != 0)
+	{
+		index = perfect_sort(stack_a, stack_b);
+		
+	}
+	
+}
+
 int	perfect_sort(t_stack *stack_a, t_stack *stack_b)
 {
 	int *arr;
