@@ -39,7 +39,7 @@ void	rotate(t_stack *stack);
 void	rotate_rr(t_stack *stack_a, t_stack *stack_b);
 void	push_to(t_stack *pushed_to, t_stack *from);
 void    rev_rotate(t_stack *stack);
-void    rrr(t_stack *stack_a, t_stack stack_b);
+void    rrr(t_stack *stack_a, t_stack *stack_b);
 void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab);
 void	quick_sort(t_stack *stack_a, t_stack *stack_b);
 void	two_solve(t_stack *stack);
@@ -61,6 +61,14 @@ void	last_sorting(t_stack *stack_a);
 
 
 
-int	perfect_sort(t_stack *stack_a, t_stack *stack_b);
+int		perfect_sort(t_stack *stack_a, t_stack *stack_b);
+void 	both_stacks(t_stack *stack_a, t_stack *stack_b, int *a, int *b);
+void	super_move(t_stack *stack_a, t_stack *stack_b, int a, int b);
+void	infer_move(t_stack *stack_a, t_stack *stack_b, int a_move, int b_move);
+int		*total_movement(t_stack *stack_a, t_stack *);
+int		*instructions_to_a(t_stack *stack_a, t_stack *stack_b);
+int		*instructions_to_b(t_stack *stack_b);
+void    push_all_to_a(t_stack *stack_a, t_stack *stack_b, int best_index);
+int		abs_move(int x);
 
 #endif
