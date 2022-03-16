@@ -11,7 +11,9 @@ SRC = push_swap.c\
 	low_solver.c\
 	greater_than.c\
 	sorting.c\
-	rev_sorting.c
+	rev_sorting.c\
+	perfect_sort.c\
+	opt_movements.c
 #SRCB = minitalk_utils_bonus.c
 
 OBJS = $(SRC:.c=.o)

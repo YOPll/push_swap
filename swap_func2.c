@@ -29,7 +29,7 @@ void    rev_rotate(t_stack *stack)
     stack->arr[0] = temp;
 }
 
-void    rrr(t_stack *stack_a, t_stack stack_b)
+void    rrr(t_stack *stack_a, t_stack *stack_b)
 {
     rev_rotate(stack_a);
     rev_rotate(stack_a);
