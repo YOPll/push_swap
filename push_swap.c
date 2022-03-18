@@ -38,5 +38,5 @@ int	main(int ac, char *av[])
 	if (ac == 1)
 		write(1, "Error\n", 6);
 	push_swap(ac - 1, av + 1);
-	return (0);
+	return 0;
 }

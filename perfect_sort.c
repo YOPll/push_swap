@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <strings.h>
+#include <stdio.h>
 #include "./include/push_swap.h"
 
 void both_stacks(t_stack *stack_a, t_stack *stack_b, int *a, int *b)
@@ -42,6 +44,7 @@ void	super_move(t_stack *stack_a, t_stack *stack_b, int a, int b)
 	{
 		rotate(stack_b);
 		write(1, "rb\n", 3);
+		printf("--> %d\n", b);
 		b--;
 	}
 	
@@ -68,6 +71,7 @@ int	*total_movement(t_stack *stack_a, t_stack *stack_b)
 	min_index_b= instructions_to_b(stack_b);
 	i = 0;
 	movements = malloc(sizeof(int) * stack_b->filled);
+	bzero(movements, sizeof(int) * stack_b->filled);
 	while (i < stack_b->filled)
 	{
 		movements[i] = abs_move(min_index_a[i]) + abs_move(min_index_b[i]);
@@ -83,7 +87,7 @@ int	perfect_sort(t_stack *stack_a, t_stack *stack_b)
 	int min_index;
 
 	arr = total_movement(stack_a, stack_b);
-	min_index = find_min_num_index(arr, stack_a->filled);
+	min_index = find_min_num_index(arr, stack_b->filled);
 	free(arr);
 	return (min_index);
 }

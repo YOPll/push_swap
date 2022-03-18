@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
+#include <stdio.h>
+#include <strings.h>
 
 int abs_move(int x)
 {
@@ -29,12 +31,13 @@ int *instructions_to_a(t_stack *stack_a, t_stack *stack_b)
     j = 0;
     index_min = find_min_num_index(stack_a->arr, stack_a->filled);
     a = malloc(sizeof(int) * stack_b->filled);
+    bzero(a, sizeof(int) * stack_b->filled);
     while (j < stack_b->filled)
     {
         i = index_min;
         while (i < stack_a->filled && stack_a->arr[i] < stack_b->arr[j])
         i++;
-        if (i = stack_a->filled && stack_a->arr[i] < stack_b->arr[j])
+        if (i == stack_a->filled && stack_a->arr[i] < stack_b->arr[j])
         {
             i = 0;
             while (i < index_min && stack_a->arr[i] < stack_b->arr[j])
@@ -55,6 +58,7 @@ int *instructions_to_b(t_stack *stack_b)
 
     i = 0;
     b = malloc(sizeof(int) * stack_b->filled);
+    bzero(b, sizeof(int) * stack_b->filled);
     while (i < stack_b->filled)
     {
         b[i] = i;
@@ -70,13 +74,13 @@ void	infer_move(t_stack *stack_a, t_stack *stack_b, int a, int b)
     while (a < 0)
     {
         rev_rotate(stack_a);
-        write(1,"rra\n", 1);
+        write(1,"rra\n", 4);
         a++;
     }
     while (b < 0)
     {
         rev_rotate(stack_b);
-        write(1,"rrb\n", 1);
+        write(1,"rrb\n", 4);
         b++;
     }
 }
@@ -92,6 +96,7 @@ void    push_all_to_a(t_stack *stack_a, t_stack *stack_b, int best_index)
     tab_move_b = instructions_to_b(stack_b);
     a_bestmove = tab_move_a[best_index];
     b_bestmove = tab_move_b[best_index];
+    printf("%d, %d, %d \n", best_index, a_bestmove, b_bestmove);
     both_stacks(stack_a, stack_b, &a_bestmove, &b_bestmove);
     super_move(stack_a, stack_b, a_bestmove, b_bestmove);
     infer_move(stack_a, stack_b, a_bestmove, b_bestmove);
