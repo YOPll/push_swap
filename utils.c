@@ -69,8 +69,12 @@ int	ft_atoi(const char *str)
 void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab)
 {
 	stack_a->arr = malloc(sizeof(int) * size);
+	if (!stack_a->arr)
+		exit (1);
 	stack_a->filled = size;
 	ft_memcpy(stack_a->arr, tab, (size) * 4);
 	stack_b->arr = malloc(sizeof(int) * size);
+	if (!stack_b->arr)
+		exit (1);
 	stack_b->filled = 0;
 }

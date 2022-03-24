@@ -10,12 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "./include/push_swap.h"
 
-void both_stacks(t_stack *stack_a, t_stack *stack_b, int *a, int *b)
+void	both_stacks(t_stack *stack_a, t_stack *stack_b, int *a, int *b)
 {
-	while((*a) > 0 && (*b) > 0)
+	while ((*a) > 0 && (*b) > 0)
 	{
 		rotate_rr(stack_a, stack_b);
 		write(1, "rr\n", 3);
@@ -33,7 +32,7 @@ void both_stacks(t_stack *stack_a, t_stack *stack_b, int *a, int *b)
 
 void	super_move(t_stack *stack_a, t_stack *stack_b, int a, int b)
 {
-	while(a > 0)
+	while (a > 0)
 	{
 		rotate(stack_a);
 		write(1, "ra\n", 3);
@@ -45,12 +44,12 @@ void	super_move(t_stack *stack_a, t_stack *stack_b, int a, int b)
 		write(1, "rb\n", 3);
 		b--;
 	}
-	
 }
 
 void	mid_sorting(t_stack *stack_a, t_stack *stack_b)
 {
-	int index;
+	int	index;
+
 	while (stack_b->filled != 0)
 	{
 		index = perfect_sort(stack_a, stack_b);
@@ -60,15 +59,17 @@ void	mid_sorting(t_stack *stack_a, t_stack *stack_b)
 
 int	*total_movement(t_stack *stack_a, t_stack *stack_b)
 {
-	int *movements;
-	int *min_index_a;
-	int *min_index_b;
-	int i;
+	int	*movements;
+	int	*min_index_a;
+	int	*min_index_b;
+	int	i;
 
-	min_index_a = instructions_to_a(stack_a, stack_b);
-	min_index_b= instructions_to_b(stack_b);
+	min_index_a = instructions_to_a(stack_a, stack_b, 0, 0);
+	min_index_b = instructions_to_b(stack_b);
 	i = 0;
 	movements = malloc(sizeof(int) * stack_b->filled);
+	if (!movements)
+		exit (1);
 	while (i < stack_b->filled)
 	{
 		movements[i] = abs_move(min_index_a[i]) + abs_move(min_index_b[i]);
@@ -80,8 +81,8 @@ int	*total_movement(t_stack *stack_a, t_stack *stack_b)
 
 int	perfect_sort(t_stack *stack_a, t_stack *stack_b)
 {
-	int *arr;
-	int min_index;
+	int	*arr;
+	int	min_index;
 
 	arr = total_movement(stack_a, stack_b);
 	min_index = find_min_num_index(arr, stack_b->filled);

@@ -15,9 +15,9 @@
 int	find_min_num_index(int *arr, int filled)
 {
 	int	min;
-	int index;
-	int i;
-	
+	int	index;
+	int	i;
+
 	i = 1;
 	index = 0;
 	min = arr[0];
@@ -37,8 +37,8 @@ int	*true_false(int *arr, int filled, int index, int i)
 {
 	int	temp;
 	int	*check;
-	int traverse;
-	
+	int	traverse;
+
 	check = malloc(sizeof(int) * filled);
 	if (!check)
 		exit(1);
@@ -49,7 +49,7 @@ int	*true_false(int *arr, int filled, int index, int i)
 		if (temp < arr[i])
 		{
 			check[i] = 1;
-			temp = arr[i];	
+			temp = arr[i];
 		}
 		else
 			check[i] = 0;
@@ -57,15 +57,15 @@ int	*true_false(int *arr, int filled, int index, int i)
 		i = i % filled;
 	}
 	check[index] = 1;
-	return (check);	
+	return (check);
 }
 
 int	find_max_num_index(int *arr, int filled)
 {
-	int max;
+	int	max;
 	int	index;
 	int	i;
-	
+
 	i = 1;
 	index = 0;
 	max = arr[0];
@@ -84,7 +84,7 @@ int	find_max_num_index(int *arr, int filled)
 int	find_mark_head(int *arr, int filled, int i)
 {
 	int	count;
-	int traverse;
+	int	traverse;
 	int	place;
 	int	j;
 
@@ -103,7 +103,7 @@ int	find_mark_head(int *arr, int filled, int i)
 		j = j % filled;
 		traverse++;
 	}
-	return(count);
+	return (count);
 }
 
 int	*greater_than(int *arr, int filled)
@@ -111,9 +111,11 @@ int	*greater_than(int *arr, int filled)
 	int	*arrays;
 	int	*true_or_false;
 	int	i;
-	int max_index;
+	int	max_index;
 
 	arrays = malloc(sizeof(int) * filled);
+	if (!arrays)
+		exit(1);
 	i = 0;
 	while (i < filled)
 	{

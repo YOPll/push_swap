@@ -14,8 +14,8 @@
 
 void	last_sorting(t_stack *stack_a)
 {
-	int min_index;
-	
+	int	min_index;
+
 	min_index = find_min_num_index(stack_a->arr, stack_a->filled);
 	if (min_index <= stack_a->filled / 2)
 	{

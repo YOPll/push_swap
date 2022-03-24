@@ -14,15 +14,15 @@
 
 int	*sort_five(int *arr, int filled, int i, int j)
 {
-	int temp;
-	int *sorted;
-	
+	int	temp;
+	int	*sorted;
+
 	sorted = malloc(sizeof(int) * 5);
 	if (!sorted)
-		return (ft_free(arr, NULL),exit(1), NULL);
+		return (ft_free(arr, NULL), exit(1), NULL);
 	while (++i < filled)
 		sorted[i] = arr[i];
-	i = - 1;
+	i = -1;
 	while (++i + 1 < filled)
 	{
 		j = i + 1;
@@ -44,7 +44,7 @@ void	solver_stackb(t_stack *stack_a, t_stack *stack_b)
 {
 	tree_solve(stack_a);
 	if (stack_b->arr[0] < stack_b->arr[1])
-	{ 
+	{
 		swap(stack_b);
 		write(1, "sb\n", 3);
 	}
@@ -56,9 +56,9 @@ void	solver_stackb(t_stack *stack_a, t_stack *stack_b)
 
 void	solver(t_stack *stack_a, t_stack *stack_b)
 {
-	int *arr;
+	int	*arr;
 
-	arr = sort_five(stack_a->arr, stack_a->filled, -1 , 0);
+	arr = sort_five(stack_a->arr, stack_a->filled, -1, 0);
 	while (stack_a->filled != 3)
 	{
 		if (stack_a->arr[0] < arr[2])

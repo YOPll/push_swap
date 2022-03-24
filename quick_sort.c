@@ -59,7 +59,7 @@ void	last_solve(t_stack *stack_a, t_stack *stack_b)
 	j = stack_a->filled;
 	while (checker < j && stack_a->arr[checker] < stack_a->arr[checker + 1])
 		checker++;
-	if(checker != stack_a->filled)
+	if (checker != stack_a->filled)
 		solver(stack_a, stack_b);
 }
 
