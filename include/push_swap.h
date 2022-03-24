@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/04 14:47:03 by zyacoubi         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:46:15 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ void	two_solve(t_stack *stack);
 void	tree_solve(t_stack *stack);
 void	last_solve(t_stack *stack_a, t_stack *stack_b);
 void	solver(t_stack *stack_a, t_stack *stack_b);
-int		*sort_five(int *arr, int filled);
+int		*sort_five(int *arr, int filled, int i, int j);
 void	solver_stackb(t_stack *stack_a, t_stack *stack_b);
 int		*greater_than(int *arr, int filled);
-int		*true_false(int *arr, int filled, int index);
+int		*true_false(int *arr, int filled, int index, int i);
 int		find_mark_head(int *arr, int filled, int i);
 int		find_max_num_index(int *arr, int filled);
 void    start_sorting(t_stack *stack_a, t_stack *stack_b, int *head);

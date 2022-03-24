@@ -1,18 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   opt_movement.c                                     :+:      :+:    :+:   */
+/*   opt_movements.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 17:00:51 by zyacoubi          #+#    #+#             */
-/*   Updated: 2022/03/16 17:00:51 by zyacoubi         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:39:55 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
-#include <stdio.h>
-#include <strings.h>
 
 int abs_move(int x)
 {
@@ -31,7 +29,6 @@ int *instructions_to_a(t_stack *stack_a, t_stack *stack_b)
     j = 0;
     index_min = find_min_num_index(stack_a->arr, stack_a->filled);
     a = malloc(sizeof(int) * stack_b->filled);
-    bzero(a, sizeof(int) * stack_b->filled);
     while (j < stack_b->filled)
     {
         i = index_min;
@@ -58,7 +55,6 @@ int *instructions_to_b(t_stack *stack_b)
 
     i = 0;
     b = malloc(sizeof(int) * stack_b->filled);
-    bzero(b, sizeof(int) * stack_b->filled);
     while (i < stack_b->filled)
     {
         b[i] = i;
@@ -96,7 +92,6 @@ void    push_all_to_a(t_stack *stack_a, t_stack *stack_b, int best_index)
     tab_move_b = instructions_to_b(stack_b);
     a_bestmove = tab_move_a[best_index];
     b_bestmove = tab_move_b[best_index];
-    printf("%d, %d, %d \n", best_index, a_bestmove, b_bestmove);
     both_stacks(stack_a, stack_b, &a_bestmove, &b_bestmove);
     super_move(stack_a, stack_b, a_bestmove, b_bestmove);
     infer_move(stack_a, stack_b, a_bestmove, b_bestmove);

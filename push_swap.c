@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 18:42:26 by zyacoubi          #+#    #+#             */
-/*   Updated: 2022/03/04 14:47:43 by zyacoubi         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:39:33 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	push_swap(int ac, char *av[])
 	int	*marked_head;
 
 	arr = malloc(sizeof(int) * ac);
+	if (!arr)
+		exit(1);
 	conv(av, arr);
 	is_dup(ac, arr);
 	stack_handle(&stack_a, &stack_b, ac, arr);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   greater_than.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: zyacoubi <zyacoubi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 17:36:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/02 19:52:23 by zyacoubi         ###   ########.fr       */
+/*   Updated: 2022/03/24 15:45:56 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,18 +33,18 @@ int	find_min_num_index(int *arr, int filled)
 	return (index);
 }
 
-int	*true_false(int *arr, int filled, int index)
+int	*true_false(int *arr, int filled, int index, int i)
 {
-	int	i;
 	int	temp;
 	int	*check;
 	int traverse;
 	
 	check = malloc(sizeof(int) * filled);
-	i = index;
+	if (!check)
+		exit(1);
 	temp = arr[index];
-	traverse = 0;
-	while (traverse < filled)
+	traverse = -1;
+	while (++traverse < filled)
 	{
 		if (temp < arr[i])
 		{
@@ -55,7 +55,6 @@ int	*true_false(int *arr, int filled, int index)
 			check[i] = 0;
 		i++;
 		i = i % filled;
-		traverse++;
 	}
 	check[index] = 1;
 	return (check);	
@@ -122,7 +121,7 @@ int	*greater_than(int *arr, int filled)
 		i++;
 	}
 	max_index = find_max_num_index(arrays, filled);
-	true_or_false = true_false(arr, filled, max_index);
+	true_or_false = true_false(arr, filled, max_index, max_index);
 	free(arrays);
 	return (true_or_false);
 }

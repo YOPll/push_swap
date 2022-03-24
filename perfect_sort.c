@@ -6,12 +6,11 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 02:15:46 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/03 02:18:44 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/24 15:21:34 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <strings.h>
-#include <stdio.h>
+
 #include "./include/push_swap.h"
 
 void both_stacks(t_stack *stack_a, t_stack *stack_b, int *a, int *b)
@@ -44,7 +43,6 @@ void	super_move(t_stack *stack_a, t_stack *stack_b, int a, int b)
 	{
 		rotate(stack_b);
 		write(1, "rb\n", 3);
-		printf("--> %d\n", b);
 		b--;
 	}
 	
@@ -71,7 +69,6 @@ int	*total_movement(t_stack *stack_a, t_stack *stack_b)
 	min_index_b= instructions_to_b(stack_b);
 	i = 0;
 	movements = malloc(sizeof(int) * stack_b->filled);
-	bzero(movements, sizeof(int) * stack_b->filled);
 	while (i < stack_b->filled)
 	{
 		movements[i] = abs_move(min_index_a[i]) + abs_move(min_index_b[i]);
