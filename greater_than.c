@@ -94,7 +94,7 @@ int	find_mark_head(int *arr, int filled, int i)
 	place = arr[i];
 	while (traverse < filled)
 	{
-		if (place < arr[i])
+		if (place < arr[j])
 		{
 			place = arr[j];
 			count++;

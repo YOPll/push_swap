@@ -33,7 +33,7 @@ int	*instructions_to_a(t_stack *stack_a, t_stack *stack_b, int i, int j)
 		i = index_min;
 		while (i < stack_a->filled && stack_a->arr[i] < stack_b->arr[j])
 		i++;
-		if (i == stack_a->filled && stack_a->arr[i] < stack_b->arr[j])
+		if (i == stack_a->filled && stack_a->arr[0] < stack_b->arr[j])
 		{
 			i = 0;
 			while (i < index_min && stack_a->arr[i] < stack_b->arr[j])
