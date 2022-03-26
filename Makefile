@@ -14,7 +14,12 @@ SRC = push_swap.c\
 	rev_sorting.c\
 	perfect_sort.c\
 	opt_movements.c
-#SRCB = minitalk_utils_bonus.c
+
+SRCB = home_made_checker.c\
+	swap_func.c\
+	swap_func2.c\
+	utils.c
+
 
 OBJS = $(SRC:.c=.o)
 #OBJBS = $(SRCB:.c=.o)
