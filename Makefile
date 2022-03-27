@@ -22,7 +22,8 @@ SRCB = home_made_checker.c\
 
 
 OBJS = $(SRC:.c=.o)
-#OBJBS = $(SRCB:.c=.o)
+
+OBJBS = $(SRCB:.c=.o)
 all: $(OBJS)
 	$(CC) $(FLAGS) -I$(HEADER_DIR) $(OBJS) -o $(NAME)
 
