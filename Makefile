@@ -16,6 +16,7 @@ SRC = push_swap.c\
 	opt_movements.c
 
 SRCB = home_made_checker.c\
+	get_next_line.c\
 	swap_func.c\
 	swap_func2.c\
 	utils.c
