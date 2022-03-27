@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/24 15:46:15 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/27 02:10:55 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,9 @@ int		*instructions_to_a(t_stack *stack_a, t_stack *stack_b, int i, int j);
 int		*instructions_to_b(t_stack *stack_b);
 void	push_all_to_a(t_stack *stack_a, t_stack *stack_b, int best_index);
 int		abs_move(int x);
+// bonus
+char	*ft_strdup(const char *str);
+int	ft_strncmp(const char *s1, const char *s2, unsigned int n);
+char	*get_next_line(int fd);
 
 #endif
