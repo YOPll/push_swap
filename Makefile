@@ -1,4 +1,5 @@
 NAME = push_swap
+NAME_CHECKER = checker
 GCC = cc
 HEADER_DIR = include
 HEADER = include/push_swap.h
@@ -19,7 +20,8 @@ SRCB = home_made_checker.c\
 	get_next_line.c\
 	swap_func.c\
 	swap_func2.c\
-	utils.c
+	utils.c\
+	utils2.c
 
 
 OBJS = $(SRC:.c=.o)
@@ -27,6 +29,8 @@ OBJS = $(SRC:.c=.o)
 OBJBS = $(SRCB:.c=.o)
 all: $(OBJS)
 	$(CC) $(FLAGS) -I$(HEADER_DIR) $(OBJS) -o $(NAME)
+bonus: $(OBJBS)
+	$(CC) $(FLAGS) -I$(HEADER_DIR) $(OBJBS) -o $(NAME_CHECKER)
 
 %.o: %.c $(HEADER)
 	$(CC) $(FLAGS) -I$(HEADER_DIR) -c $< -o $@
@@ -35,7 +39,7 @@ clean:
 	rm -rf $(OBJS) $(OBJBS)
 
 fclean: clean
-	rm -rf $(NAME)
+	rm -rf $(NAME) $(NAME_CHECKER)
 
 re: fclean all
 

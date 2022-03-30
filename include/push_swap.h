@@ -6,7 +6,7 @@
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 17:14:16 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/27 02:10:55 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/28 13:51:59 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	push_all_to_a(t_stack *stack_a, t_stack *stack_b, int best_index);
 int		abs_move(int x);
 // bonus
 char	*ft_strdup(const char *str);
-int	ft_strncmp(const char *s1, const char *s2, unsigned int n);
+int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 char	*get_next_line(int fd);
+void	*ft_memset(void *b, int c, size_t len);
 
 #endif

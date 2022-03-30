@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   home_made_checker.c                                :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yopi <yopi@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/03 01:59:00 by yopi              #+#    #+#             */
-/*   Updated: 2022/03/27 02:08:44 by yopi             ###   ########.fr       */
+/*   Updated: 2022/03/28 13:51:41 by yopi             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./include/push_swap.h"
+
+void	*ft_memset(void *b, int c, size_t len)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < len)
+	{
+		((unsigned char *)b)[i] = c;
+		i++;
+	}
+	return (b);
+}
 
 char	*ft_strdup(const char *str)
 {
