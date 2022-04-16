@@ -61,8 +61,8 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	check_max_and_min(res);
-	if (*str != '\0')
-		ft_error();
+	// if (*str != '\0')
+	// 	ft_error();
 	return (res * j);
 }
 
@@ -77,4 +77,28 @@ void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab)
 	if (!stack_b->arr)
 		exit (1);
 	stack_b->filled = 0;
+}
+
+int	ft_size_tab(int ac, char *av[])
+{
+	int	i;
+	int	j;
+	int	x;
+
+	i = 1;
+	x = 0;
+	while (i < ac)
+	{
+		j = 0;
+		if (av[i][j] != ' ')
+			x++;
+		while (av[i][j])
+		{
+			if (av[i][j] == ' ' && av[i][j + 1] >= 48 && av[i][j + 1] <= 57)
+				x++;
+			j++;
+		}
+		i++;
+	}
+	return (x);
 }

@@ -12,16 +12,33 @@
 
 #include "./include/push_swap.h"
 
-void	conv(char *av[], int *tab)
+int	*ft_tab_malloc(int ac, char *av[])
 {
 	int	i;
+	int	j;
+	int	x;
+	int	*tab;
 
-	i = 0;
-	while (av[i])
+	i = 1;
+	j = 0;
+	x = -1;
+	tab = (int *)malloc(100000);
+	if (!tab && !*tab)
+		return (NULL);
+	while (i < ac)
 	{
-		tab[i] = ft_atoi(av[i]);
+		j = 0;
+		if (av[i][j] != ' ')
+			tab[++x] = ft_atoi(av[i]);
+		while (av[i][j])
+		{
+			if (av[i][j] == ' ' && av[i][j + 1] >= 48 && av[i][j + 1] <= 57)
+				tab[++x] = ft_atoi(&av[i][j]);
+			j++;
+		}
 		i++;
 	}
+	return (tab);
 }
 
 void	is_dup(int ac, int *arr)

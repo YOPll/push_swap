@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 # define INT_MIN -2147483648
 # define INT_MAX 2147483647
@@ -27,7 +28,8 @@ typedef struct s_stack
 
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-void	conv(char *av[], int *tab);
+int		*ft_tab_malloc(int ac, char *av[]);
+int	ft_size_tab(int ac, char *av[]);
 int		ft_atoi(const char *str);
 void	is_dup(int ac, int *arr);
 void	ft_error(void);
