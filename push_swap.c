@@ -28,21 +28,17 @@ int	is_sorted(int *arr, int arr_size)
 
 void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 {
-	int i = 0;
+	int count;
 	t_stack	stack_a;
 	t_stack	stack_b;
 
-	arr = malloc(sizeof(int) * ac);
+	count = ft_size_tab(ac, av);
+	arr = malloc(sizeof(int) * count);
 	if (!arr)
 		exit(1);
 	arr = ft_tab_malloc(ac, av);
-	while (arr[i])
-	{
-		printf("%d\n",arr[i]);
-		i++;
-	}
-	is_dup(ac, arr);
-	stack_handle(&stack_a, &stack_b, ac, arr);
+	is_dup(count, arr);
+	stack_handle(&stack_a, &stack_b, count, arr);
 	if (is_sorted(arr, stack_a.filled))
 		return ;
 	if (stack_a.filled < 4 || stack_a.filled == 5)
@@ -59,6 +55,6 @@ int	main(int ac, char *av[])
 {
 	if (ac == 1)
 		write(1, "Error\n", 6);
-	push_swap(ac, av, NULL, NULL);
+	push_swap(ac , av, NULL, NULL);
 	return (0);
 }

@@ -22,7 +22,7 @@ int	*ft_tab_malloc(int ac, char *av[])
 	i = 1;
 	j = 0;
 	x = -1;
-	tab = (int *)malloc(100000);
+	tab = (int *)malloc(sizeof(int) * (ft_size_tab(ac, av)));
 	if (!tab && !*tab)
 		return (NULL);
 	while (i < ac)

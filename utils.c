@@ -61,8 +61,6 @@ int	ft_atoi(const char *str)
 		str++;
 	}
 	check_max_and_min(res);
-	// if (*str != '\0')
-	// 	ft_error();
 	return (res * j);
 }
 
