@@ -31,6 +31,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 int		*ft_tab_malloc(int ac, char *av[]);
 int		ft_size_tab(int ac, char *av[]);
 int		ft_atoi(const char *str);
+int		ft_isdigit(int c);
 int		is_integer(int ac, char *av[]);
 void	is_dup(int ac, int *arr);
 void	ft_error(void);

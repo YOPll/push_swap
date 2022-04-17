@@ -12,6 +12,13 @@
 
 #include "./include/push_swap.h"
 
+int	ft_isdigit(int c)
+{
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
+}
+
 int	is_integer(int ac, char *av[])
 {
 	int	i;
@@ -78,6 +85,21 @@ void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 
 int	main(int ac, char *av[])
 {
+	int i;
+	int j;
+
+	i = 0;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (av[i][j] == '-' && !ft_isdigit(av[i][j + 1]))
+				ft_error();
+			j++;
+		}
+		i++;
+	}
 	if (is_integer(ac, av) == 1)
 		push_swap(ac , av, NULL, NULL);
 	else if (is_integer(ac, av) == 0)
