@@ -12,38 +12,6 @@
 
 #include "./include/push_swap.h"
 
-int	ft_isdigit(int c)
-{
-	if (c >= 48 && c <= 57)
-		return (1);
-	return (0);
-}
-
-int	is_integer(int ac, char *av[])
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 0;
-	while (i <= ac - 1)
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if ((av[i][j] >= 48 && av[i][j] <= 57) || \
-				av[i][j] == 43 || av[i][j] == 45 || av[i][j] == 32)
-			{
-				j++;
-			}
-			else
-				return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-
 int	is_sorted(int *arr, int arr_size)
 {
 	int	i;
@@ -60,6 +28,7 @@ int	is_sorted(int *arr, int arr_size)
 
 void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 {
+	int i = 0;
 	int count;
 	t_stack	stack_a;
 	t_stack	stack_b;
@@ -68,7 +37,7 @@ void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 	arr = malloc(sizeof(int) * count);
 	if (!arr)
 		exit(1);
-	arr = ft_tab_malloc(ac, av);
+	arr = ft_resize(ac, count, av);
 	is_dup(count, arr);
 	stack_handle(&stack_a, &stack_b, count, arr);
 	if (is_sorted(arr, stack_a.filled))

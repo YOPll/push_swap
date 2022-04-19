@@ -28,7 +28,7 @@ typedef struct s_stack
 
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-int		*ft_tab_malloc(int ac, char *av[]);
+int		*ft_resize(int ac, int count, char *av[]);
 int		ft_size_tab(int ac, char *av[]);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);

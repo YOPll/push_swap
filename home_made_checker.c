@@ -78,34 +78,50 @@ void	checker(t_stack *stack_a, t_stack *stack_b, int filled)
 	is_all_sorted(stack_a, stack_b, filled);
 }
 
-void    push_swap_checker(char **str, int filled)
+void    push_swap_checker(int ac, char **av, int *arr)
 {
+	int		count;
+	int i = 0;
 	t_stack	stack_a;
 	t_stack	stack_b;
-	int	*arr;
 	
-	arr = malloc(sizeof(int) * filled);
-	if (!arr)
-		exit(1);
+	count = ft_size_tab(ac, av);
+	arr = ft_resize(ac, count, av);
+	is_dup(count, arr);
 	ft_memset(&stack_a, 0, sizeof(t_stack));
-	stack_a.arr = malloc(sizeof(int) * filled);
+	stack_a.arr = malloc(sizeof(int) * count);
 	if (!stack_a.arr)
 		exit (1);
-	stack_a.filled = filled;
+	stack_a.filled = count;
 	ft_memset(&stack_b, 0, sizeof(t_stack));
-	stack_b.arr = malloc(sizeof(int) * filled);
+	stack_b.arr = malloc(sizeof(int) * count);
 	if (!stack_b.arr)
 		exit (1);
 	stack_b.filled = 0;
-	ft_memcpy(stack_a.arr, str, sizeof(int) * filled);
-	conv(str, arr);
-	is_dup(filled, arr);
+	ft_memcpy(stack_a.arr, arr, sizeof(int) * count);
+	checker(&stack_a, &stack_b, count);
 	free(arr);
 }
 int main(int ac, char **av)
 {
-	if (ac == 1)
-		exit(0);
-	push_swap_checker(av + 1, ac - 1);
+	int i;
+	int j;
+
+	i = 0;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			if (av[i][j] == '-' && !ft_isdigit(av[i][j + 1]))
+				ft_error();
+			j++;
+		}
+		i++;
+	}
+	if (is_integer(ac, av) == 1)
+		push_swap_checker(ac , av , NULL);
+	else if (is_integer(ac, av) == 0)
+		ft_error();
 	return (0);
 }

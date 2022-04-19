@@ -14,14 +14,16 @@ SRC = push_swap.c\
 	sorting.c\
 	rev_sorting.c\
 	perfect_sort.c\
-	opt_movements.c
+	opt_movements.c\
+	utils3.c
 
 SRCB = home_made_checker.c\
 	get_next_line.c\
 	swap_func.c\
 	swap_func2.c\
 	utils.c\
-	utils2.c
+	utils2.c\
+	utils3.c
 
 
 OBJS = $(SRC:.c=.o)
