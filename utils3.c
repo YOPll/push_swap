@@ -12,6 +12,12 @@
 
 #include "./include/push_swap.h"
 
+void	initialize_stack(t_stack *given_stack, int stack_size)
+{
+	given_stack->filled = 0;
+	given_stack->arr = malloc(sizeof(int) * stack_size);
+}
+
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)

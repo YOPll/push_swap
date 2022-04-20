@@ -1,6 +1,7 @@
 NAME = push_swap
 NAME_CHECKER = checker
 GCC = cc
+FLAGS = -Wall -Werror -Wextra
 HEADER_DIR = include
 HEADER = include/push_swap.h
 SRC = push_swap.c\
@@ -29,9 +30,14 @@ SRCB = home_made_checker.c\
 OBJS = $(SRC:.c=.o)
 
 OBJBS = $(SRCB:.c=.o)
-all: $(OBJS)
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
 	$(CC) $(FLAGS) -I$(HEADER_DIR) $(OBJS) -o $(NAME)
-bonus: $(OBJBS)
+
+bonus: checker
+checker: $(OBJBS)
 	$(CC) $(FLAGS) -I$(HEADER_DIR) $(OBJBS) -o $(NAME_CHECKER)
 
 %.o: %.c $(HEADER)

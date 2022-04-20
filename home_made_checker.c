@@ -23,7 +23,7 @@ void	check_sorting(t_stack *stack_a, t_stack *stack_b, char *actions)
 	else if (ft_strncmp(actions, "ra\n", 3) == 0)
 		rotate(stack_a);
 	else if (ft_strncmp(actions, "rb\n", 3) == 0)
-		rotate(stack_a);
+		rotate(stack_b);
 	else if (ft_strncmp(actions, "rr\n", 3) == 0)
 		rotate_rr(stack_a, stack_b);
 	else if (ft_strncmp(actions, "rra\n", 4) == 0)
@@ -39,7 +39,7 @@ void	check_sorting(t_stack *stack_a, t_stack *stack_b, char *actions)
 	else
 	{
 		write(1, "error\n", 6);
-		return ;	
+		exit(1);
 	}
 }
 
@@ -56,8 +56,6 @@ void	is_all_sorted(t_stack *stack_a, t_stack *stack_b, int filled)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	if (stack_b->filled != 0)
-		write(1,"KO\n", 3);
 	if (i + 1 != filled)
 		free(stack_b->arr);
 	free(stack_a->arr);
@@ -67,13 +65,12 @@ void	checker(t_stack *stack_a, t_stack *stack_b, int filled)
 {
 	char	*actions;
 
-	actions = get_next_line(STDERR_FILENO);
+	actions = get_next_line(STDIN_FILENO);
 	while (actions)
 	{
 		check_sorting(stack_a, stack_b, actions);
 		free(actions);
-		actions = NULL;
-		actions = get_next_line(STDERR_FILENO);
+		actions = get_next_line(STDIN_FILENO);
 	}
 	is_all_sorted(stack_a, stack_b, filled);
 }
@@ -81,11 +78,13 @@ void	checker(t_stack *stack_a, t_stack *stack_b, int filled)
 void    push_swap_checker(int ac, char **av, int *arr)
 {
 	int		count;
-	int i = 0;
 	t_stack	stack_a;
 	t_stack	stack_b;
 	
 	count = ft_size_tab(ac, av);
+	arr = malloc(sizeof(int) * (count));
+	if (!arr)
+		exit (1);
 	arr = ft_resize(ac, count, av);
 	is_dup(count, arr);
 	ft_memset(&stack_a, 0, sizeof(t_stack));
