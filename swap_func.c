@@ -62,7 +62,7 @@ void	push_to(t_stack *pushed_to, t_stack *from)
 	while (i > 0)
 	{
 		pushed_to->arr[i] = pushed_to->arr[i - 1];
-		i --;
+		i--;
 	}
 	pushed_to->arr[0] = from->arr[0];
 	pushed_to->filled += 1;

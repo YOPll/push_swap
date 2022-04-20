@@ -28,7 +28,6 @@ int	is_sorted(int *arr, int arr_size)
 
 void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 {
-	int i = 0;
 	int count;
 	t_stack	stack_a;
 	t_stack	stack_b;

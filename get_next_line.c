@@ -66,8 +66,9 @@ char	*get_next_line(int fd)
 	char	save[999999];
 	char	buff[1];
 	char	*line;
-	int	i;
+	int		i;
 	
+	save[0] = 0;
 	i = 0;
 	if (fd < 0)
 		return (NULL);
