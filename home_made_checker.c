@@ -37,16 +37,13 @@ void	check_sorting(t_stack *stack_a, t_stack *stack_b, char *actions)
 	else if (ft_strncmp(actions, "rrr\n", 3) == 0)
 		rrr(stack_a, stack_b);
 	else
-	{
-		write(1, "error\n", 6);
-		exit(1);
-	}
+		ft_error();
 }
 
 void	is_all_sorted(t_stack *stack_a, t_stack *stack_b, int filled)
 {
 	int	i;
-	int j;
+	int	j;
 
 	i = 0;
 	j = stack_a->filled;
@@ -75,12 +72,12 @@ void	checker(t_stack *stack_a, t_stack *stack_b, int filled)
 	is_all_sorted(stack_a, stack_b, filled);
 }
 
-void    push_swap_checker(int ac, char **av, int *arr)
+void	push_swap_checker(int ac, char **av, int *arr)
 {
 	int		count;
 	t_stack	stack_a;
 	t_stack	stack_b;
-	
+
 	count = ft_size_tab(ac, av);
 	arr = malloc(sizeof(int) * (count));
 	if (!arr)
@@ -101,10 +98,11 @@ void    push_swap_checker(int ac, char **av, int *arr)
 	checker(&stack_a, &stack_b, count);
 	free(arr);
 }
-int main(int ac, char **av)
+
+int	main(int ac, char **av)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (av[i])
@@ -119,7 +117,7 @@ int main(int ac, char **av)
 		i++;
 	}
 	if (is_integer(ac, av) == 1)
-		push_swap_checker(ac , av , NULL);
+		push_swap_checker(ac, av, NULL);
 	else if (is_integer(ac, av) == 0)
 		ft_error();
 	return (0);

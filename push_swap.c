@@ -28,7 +28,7 @@ int	is_sorted(int *arr, int arr_size)
 
 void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 {
-	int count;
+	int		count;
 	t_stack	stack_a;
 	t_stack	stack_b;
 
@@ -53,8 +53,8 @@ void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 
 int	main(int ac, char *av[])
 {
-	int i;
-	int j;
+	int		i;
+	int		j;
 
 	i = 0;
 	while (av[i])
@@ -69,7 +69,7 @@ int	main(int ac, char *av[])
 		i++;
 	}
 	if (is_integer(ac, av) == 1)
-		push_swap(ac , av, NULL, NULL);
+		push_swap(ac, av, NULL, NULL);
 	else if (is_integer(ac, av) == 0)
 		ft_error();
 	return (0);

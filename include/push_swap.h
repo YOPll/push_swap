@@ -76,5 +76,5 @@ char	*ft_strdup(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
 char	*get_next_line(int fd);
 void	*ft_memset(void *b, int c, size_t len);
-
+void	initialize_stack(t_stack *given_stack, int stack_size);
 #endif

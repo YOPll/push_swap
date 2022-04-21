@@ -62,7 +62,7 @@ void	is_dup(int ac, int *arr)
 void	ft_error(void)
 {
 	write(1, "Error\n", 6);
-	exit(0);
+	exit(1);
 }
 
 void	check_max_and_min(long x)

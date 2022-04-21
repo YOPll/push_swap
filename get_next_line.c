@@ -67,7 +67,7 @@ char	*get_next_line(int fd)
 	char	buff[1];
 	char	*line;
 	int		i;
-	
+
 	save[0] = 0;
 	i = 0;
 	if (fd < 0)
