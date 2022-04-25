@@ -88,11 +88,14 @@ int	ft_size_tab(int ac, char *av[])
 	while (i < ac)
 	{
 		j = 0;
-		if (av[i][j] != ' ')
+		if (av[i][j] != ' ' && av[i][j] != '-' && av[i][j] != '+')
 			x++;
 		while (av[i][j])
 		{
 			if (av[i][j] == ' ' && av[i][j + 1] >= 48 && av[i][j + 1] <= 57)
+				x++;
+			else if ((av[i][j] == '-' || av[i][j] == '+') && \
+				(av[i][j + 1] >= 48 && av[i][j + 1] <= 57))
 				x++;
 			j++;
 		}

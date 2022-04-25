@@ -64,6 +64,8 @@ int	main(int ac, char *av[])
 		{
 			if (av[i][j] == '-' && !ft_isdigit(av[i][j + 1]))
 				ft_error();
+			if (av[i][j] == '-' && ft_isdigit(av[i][j - 1]))
+				ft_error();
 			j++;
 		}
 		i++;
