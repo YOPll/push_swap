@@ -60,7 +60,7 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (*str - '0');
 		str++;
 	}
-	check_max_and_min(res);
+	check_max_and_min(res, (char *)str);
 	return (res * j);
 }
 
@@ -81,22 +81,27 @@ int	ft_size_tab(int ac, char *av[])
 {
 	int	i;
 	int	j;
-	int	x;
+	int	cnt;
 
 	i = 1;
-	x = 0;
+	cnt = 0;
 	while (i < ac)
 	{
 		j = 0;
-		if (av[i][j] != ' ')
-			x++;
 		while (av[i][j])
 		{
-			if (av[i][j] == ' ' && av[i][j + 1] >= 48 && av[i][j + 1] <= 57)
-				x++;
-			j++;
+			while (av[i][j] && (av[i][j] < '0' || av[i][j] > '9'))
+				j++;
+			if (av[i][j])
+			{
+				while (av[i][j] >= '0' && av[i][j] <= '9')
+					j++;
+				cnt++;
+			}
+			else
+				ft_error();
 		}
 		i++;
 	}
-	return (x);
+	return (cnt);
 }

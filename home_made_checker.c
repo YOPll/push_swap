@@ -82,7 +82,7 @@ void	push_swap_checker(int ac, char **av, int *arr)
 	arr = malloc(sizeof(int) * (count));
 	if (!arr)
 		exit (1);
-	arr = ft_resize(ac, count, av);
+	arr = ft_resize(ac, count, av, 0);
 	is_dup(count, arr);
 	ft_memset(&stack_a, 0, sizeof(t_stack));
 	stack_a.arr = malloc(sizeof(int) * count);
@@ -101,21 +101,6 @@ void	push_swap_checker(int ac, char **av, int *arr)
 
 int	main(int ac, char **av)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (av[i])
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (av[i][j] == '-' && !ft_isdigit(av[i][j + 1]))
-				ft_error();
-			j++;
-		}
-		i++;
-	}
 	if (is_integer(ac, av) == 1)
 		push_swap_checker(ac, av, NULL);
 	else if (is_integer(ac, av) == 0)

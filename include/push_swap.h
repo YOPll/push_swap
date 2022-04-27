@@ -28,14 +28,14 @@ typedef struct s_stack
 
 size_t	ft_strlen(const char *s);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-int		*ft_resize(int ac, int count, char *av[]);
+int		*ft_resize(int ac, int count, char *av[], int i);
 int		ft_size_tab(int ac, char *av[]);
 int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 int		is_integer(int ac, char *av[]);
 void	is_dup(int ac, int *arr);
 void	ft_error(void);
-void	check_max_and_min(long x);
+void	check_max_and_min(long x, char *str);
 void	ft_free(int *tab1, int *tab2);
 void	swap(t_stack *stack);
 void	swap_ss(t_stack *stack_a, t_stack *stack_b);

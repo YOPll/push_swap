@@ -12,30 +12,30 @@
 
 #include "./include/push_swap.h"
 
-int	*ft_resize(int ac, int count, char *av[])
+int	*ft_resize(int ac, int count, char *av[], int i)
 {
-	int	i;
 	int	j;
 	int	x;
 	int	*tab;
 
-	i = 1;
 	x = -1;
 	tab = (int *)malloc(sizeof(int) * count);
-	if (!tab)
-		return (NULL);
-	while (i < ac)
+	while (tab && ++i < ac)
 	{
 		j = 0;
-		if (av[i][j] != ' ')
-			tab[++x] = ft_atoi(av[i]);
 		while (av[i][j])
 		{
-			if (av[i][j] == ' ' && av[i][j + 1] >= 48 && av[i][j + 1] <= 57)
+			if (av[i][j] == '-' || av[i][j] == '+' \
+			|| (av[i][j] >= '0' && av[i][j] <= '9'))
+			{
 				tab[++x] = ft_atoi(&av[i][j]);
-			j++;
+				(av[i][j] == '+' || av[i][j] == '-') && j++;
+				while (av[i][j] && (av[i][j] >= '0' && av[i][j] <= '9'))
+					j++;
+			}
+			else
+				j++;
 		}
-		i++;
 	}
 	return (tab);
 }
@@ -65,9 +65,9 @@ void	ft_error(void)
 	exit(1);
 }
 
-void	check_max_and_min(long x)
+void	check_max_and_min(long x, char *str)
 {
-	if (x < INT_MIN || x > INT_MAX)
+	if (!(!*str || *str == ' ') || x < INT_MIN || x > INT_MAX)
 		ft_error();
 }
 
