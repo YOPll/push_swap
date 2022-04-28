@@ -55,6 +55,8 @@ int	ft_atoi(const char *str)
 			j *= -1;
 		str++;
 	}
+	if (*str < '0' || *str > '9')
+		ft_error();
 	while (*str >= '0' && *str <= '9')
 	{
 		res = res * 10 + (*str - '0');
@@ -90,10 +92,12 @@ int	ft_size_tab(int ac, char *av[])
 		j = 0;
 		while (av[i][j])
 		{
-			while (av[i][j] && (av[i][j] < '0' || av[i][j] > '9'))
+			while (av[i][j] && (av[i][j] < '0' || av[i][j] > '9') && av[i][j] != '-' && av[i][j] != '+')
 				j++;
 			if (av[i][j])
 			{
+				if (av[i][j] == '+' || av[i][j] == '-')
+					j++;
 				while (av[i][j] >= '0' && av[i][j] <= '9')
 					j++;
 				cnt++;

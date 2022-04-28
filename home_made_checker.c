@@ -77,6 +77,7 @@ void	push_swap_checker(int ac, char **av, int *arr)
 	int		count;
 	t_stack	stack_a;
 	t_stack	stack_b;
+	int i = 0;
 
 	count = ft_size_tab(ac, av);
 	arr = malloc(sizeof(int) * (count));

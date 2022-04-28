@@ -37,9 +37,15 @@ void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 	int		count;
 	t_stack	stack_a;
 	t_stack	stack_b;
+	int i  = 0;
 
 	count = ft_size_tab(ac, av);
 	arr = ft_resize(ac, count, av, 0);
+	while (i < count)
+	{
+		printf("%d\n",arr[i]);
+		i++;
+	}
 	(!arr) && ft_exit();
 	is_dup(count, arr);
 	stack_handle(&stack_a, &stack_b, count, arr);
