@@ -79,25 +79,21 @@ void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab)
 	stack_b->filled = 0;
 }
 
-int	ft_size_tab(int ac, char *av[])
+int	ft_size_tab(int ac, char *av[], int cnt, int i)
 {
-	int	i;
 	int	j;
-	int	cnt;
 
-	i = 1;
-	cnt = 0;
 	while (i < ac)
 	{
 		j = 0;
 		while (av[i][j])
 		{
-			while (av[i][j] && (av[i][j] < '0' || av[i][j] > '9') && av[i][j] != '-' && av[i][j] != '+')
+			while (av[i][j] && (av[i][j] < '0' || av[i][j] > '9')
+				&& av[i][j] != '-' && av[i][j] != '+')
 				j++;
 			if (av[i][j])
 			{
-				if (av[i][j] == '+' || av[i][j] == '-')
-					j++;
+				(av[i][j] == '+' || av[i][j] == '-') && j++;
 				while (av[i][j] >= '0' && av[i][j] <= '9')
 					j++;
 				cnt++;
