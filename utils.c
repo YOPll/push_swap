@@ -55,12 +55,14 @@ int	ft_atoi(const char *str)
 			j *= -1;
 		str++;
 	}
+	if (*str < '0' || *str > '9')
+		ft_error();
 	while (*str >= '0' && *str <= '9')
 	{
 		res = res * 10 + (*str - '0');
 		str++;
 	}
-	check_max_and_min(res);
+	check_max_and_min(res, (char *)str);
 	return (res * j);
 }
 
@@ -77,29 +79,29 @@ void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab)
 	stack_b->filled = 0;
 }
 
-int	ft_size_tab(int ac, char *av[])
+int	ft_size_tab(int ac, char *av[], int cnt, int i)
 {
-	int	i;
 	int	j;
-	int	x;
 
-	i = 1;
-	x = 0;
 	while (i < ac)
 	{
 		j = 0;
-		if (av[i][j] != ' ' && av[i][j] != '-' && av[i][j] != '+')
-			x++;
 		while (av[i][j])
 		{
-			if (av[i][j] == ' ' && av[i][j + 1] >= 48 && av[i][j + 1] <= 57)
-				x++;
-			else if ((av[i][j] == '-' || av[i][j] == '+') && \
-				(av[i][j + 1] >= 48 && av[i][j + 1] <= 57))
-				x++;
-			j++;
+			while (av[i][j] && (av[i][j] < '0' || av[i][j] > '9')
+				&& av[i][j] != '-' && av[i][j] != '+')
+				j++;
+			if (av[i][j])
+			{
+				(av[i][j] == '+' || av[i][j] == '-') && j++;
+				while (av[i][j] >= '0' && av[i][j] <= '9')
+					j++;
+				cnt++;
+			}
+			else
+				ft_error();
 		}
 		i++;
 	}
-	return (x);
+	return (cnt);
 }

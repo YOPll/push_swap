@@ -26,17 +26,21 @@ int	is_sorted(int *arr, int arr_size)
 	return (1);
 }
 
+int	ft_exit(void)
+{
+	exit(0);
+	return (1);
+}
+
 void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 {
 	int		count;
 	t_stack	stack_a;
 	t_stack	stack_b;
 
-	count = ft_size_tab(ac, av);
-	arr = malloc(sizeof(int) * count);
-	if (!arr)
-		exit(1);
-	arr = ft_resize(ac, count, av);
+	count = ft_size_tab(ac, av, 0, 1);
+	arr = ft_resize(ac, count, av, 0);
+	(!arr) && ft_exit();
 	is_dup(count, arr);
 	stack_handle(&stack_a, &stack_b, count, arr);
 	if (is_sorted(arr, stack_a.filled))
@@ -53,23 +57,6 @@ void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 
 int	main(int ac, char *av[])
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	while (av[i])
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			if (av[i][j] == '-' && !ft_isdigit(av[i][j + 1]))
-				ft_error();
-			if (av[i][j] == '-' && ft_isdigit(av[i][j - 1]))
-				ft_error();
-			j++;
-		}
-		i++;
-	}
 	if (is_integer(ac, av) == 1)
 		push_swap(ac, av, NULL, NULL);
 	else if (is_integer(ac, av) == 0)
