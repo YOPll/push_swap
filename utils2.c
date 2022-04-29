@@ -52,7 +52,10 @@ void	is_dup(int ac, int *arr)
 		while (j < ac)
 		{
 			if (arr[i] == arr[j])
+			{
+				free(arr);
 				ft_error();
+			}
 			j++;
 		}
 		i++;

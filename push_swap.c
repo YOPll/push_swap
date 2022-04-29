@@ -44,7 +44,11 @@ void	push_swap(int ac, char *av[], int *arr, int *marked_head)
 	is_dup(count, arr);
 	stack_handle(&stack_a, &stack_b, count, arr);
 	if (is_sorted(arr, stack_a.filled))
+	{
+		ft_free(arr, stack_a.arr);
+		free(stack_b.arr);
 		return ;
+	}
 	if (stack_a.filled < 4 || stack_a.filled == 5)
 		quick_sort(&stack_a, &stack_b);
 	marked_head = greater_than(stack_a.arr, stack_a.filled);
