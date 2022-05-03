@@ -27,7 +27,7 @@ int	*instructions_to_a(t_stack *stack_a, t_stack *stack_b, int i, int j)
 	index_min = find_min_num_index(stack_a->arr, stack_a->filled);
 	a = malloc(sizeof(int) * stack_b->filled);
 	if (!a)
-		exit(1);
+		return (ft_free(a, NULL), exit(1), NULL);
 	while (j < stack_b->filled)
 	{
 		i = index_min;
@@ -55,7 +55,10 @@ int	*instructions_to_b(t_stack *stack_b)
 	i = 0;
 	b = malloc(sizeof(int) * stack_b->filled);
 	if (!b)
+	{
+		free(b);
 		exit(1);
+	}
 	while (i < stack_b->filled)
 	{
 		b[i] = i;

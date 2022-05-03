@@ -97,7 +97,6 @@ void	push_swap_checker(int ac, char **av, int *arr, int count)
 	}
 	ft_memcpy(stack_a.arr, arr, sizeof(int) * count);
 	checker(&stack_a, &stack_b, count);
-	ft_free(stack_a.arr, stack_b.arr);
 	free(arr);
 }
 

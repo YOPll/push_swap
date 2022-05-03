@@ -41,7 +41,7 @@ int	*true_false(int *arr, int filled, int index, int i)
 
 	check = malloc(sizeof(int) * filled);
 	if (!check)
-		exit(1);
+		return (ft_free(check, NULL), exit(1), NULL);
 	temp = arr[index];
 	traverse = -1;
 	while (++traverse < filled)
@@ -127,6 +127,6 @@ int	*greater_than(int *arr, int filled)
 	}
 	max_index = find_max_num_index(arrays, filled);
 	true_or_false = true_false(arr, filled, max_index, max_index);
-	ft_free(arrays, true_or_false);
+	free(arrays);
 	return (true_or_false);
 }
