@@ -72,38 +72,40 @@ void	checker(t_stack *stack_a, t_stack *stack_b, int filled)
 	is_all_sorted(stack_a, stack_b, filled);
 }
 
-void	push_swap_checker(int ac, char **av, int *arr)
+void	push_swap_checker(int ac, char **av, int *arr, int count)
 {
-	int		count;
 	t_stack	stack_a;
 	t_stack	stack_b;
 
 	count = ft_size_tab(ac, av, 0, 1);
-	arr = malloc(sizeof(int) * (count));
-	if (!arr)
-		exit (1);
 	arr = ft_resize(ac, count, av, 0);
 	is_dup(count, arr);
-	ft_memset(&stack_a, 0, sizeof(t_stack));
 	stack_a.arr = malloc(sizeof(int) * count);
 	if (!stack_a.arr)
+	{
+		ft_free(stack_a.arr, arr);
 		exit (1);
+	}
 	stack_a.filled = count;
 	ft_memset(&stack_b, 0, sizeof(t_stack));
 	stack_b.arr = malloc(sizeof(int) * count);
 	if (!stack_b.arr)
+	{
+		free(arr);
+		ft_free(stack_a.arr, stack_b.arr);
 		exit (1);
-	stack_b.filled = 0;
+	}
 	ft_memcpy(stack_a.arr, arr, sizeof(int) * count);
 	checker(&stack_a, &stack_b, count);
+	ft_free(stack_a.arr, stack_b.arr);
 	free(arr);
 }
 
 int	main(int ac, char **av)
 {
 	if (is_integer(ac, av) == 1)
-		push_swap_checker(ac, av, NULL);
-	else if (is_integer(ac, av) == 0)
+		push_swap_checker(ac, av, NULL, 0);
+	else
 		ft_error();
 	return (0);
 }

@@ -115,7 +115,10 @@ int	*greater_than(int *arr, int filled)
 
 	arrays = malloc(sizeof(int) * filled);
 	if (!arrays)
+	{
+		free(arrays);
 		exit(1);
+	}
 	i = 0;
 	while (i < filled)
 	{
@@ -124,6 +127,6 @@ int	*greater_than(int *arr, int filled)
 	}
 	max_index = find_max_num_index(arrays, filled);
 	true_or_false = true_false(arr, filled, max_index, max_index);
-	free(arrays);
+	ft_free(arrays, true_or_false);
 	return (true_or_false);
 }

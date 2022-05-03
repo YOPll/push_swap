@@ -79,7 +79,7 @@ void	stack_handle(t_stack *stack_a, t_stack *stack_b, int size, int *tab)
 	stack_b->arr = malloc(sizeof(int) * size);
 	if (!stack_b->arr)
 	{
-		free(stack_b->arr);
+		ft_free(stack_b->arr, stack_a->arr);
 		exit (1);
 	}
 	stack_b->filled = 0;

@@ -69,7 +69,11 @@ int	*total_movement(t_stack *stack_a, t_stack *stack_b)
 	i = 0;
 	movements = malloc(sizeof(int) * stack_b->filled);
 	if (!movements)
+	{
+		free(movements);
+		ft_free(min_index_a, min_index_b);
 		exit (1);
+	}
 	while (i < stack_b->filled)
 	{
 		movements[i] = abs_move(min_index_a[i]) + abs_move(min_index_b[i]);
