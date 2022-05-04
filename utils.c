@@ -104,8 +104,6 @@ int	ft_size_tab(int ac, char *av[], int cnt, int i)
 					j++;
 				cnt++;
 			}
-			else
-				ft_error();
 		}
 		i++;
 	}
