@@ -42,11 +42,6 @@ void	tree_solve(t_stack *stack)
 	{
 		rotate(stack);
 		write(1, "ra\n", 3);
-	}
-	if (stack->arr[1] > stack->arr[0] && stack->arr[1] > stack->arr[2])
-	{
-		rev_rotate(stack);
-		write(1, "rrxa\n", 5);
 	}	
 }
 
