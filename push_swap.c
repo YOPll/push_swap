@@ -28,7 +28,7 @@ int	is_sorted(int *arr, int arr_size)
 
 int	ft_exit(void)
 {
-	exit(0);
+	exit(1);
 	return (1);
 }
 
